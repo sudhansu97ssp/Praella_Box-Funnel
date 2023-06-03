@@ -118,3 +118,660 @@
   font-size: 15px;
 }
 
+/* Start of bag selection page stylesheet */
+
+#back {
+  position: relative;
+  top: 60px;
+  left: 98px;
+  width: 40px;
+  height: 16px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 13px/16px Montserrat;
+  letter-spacing: 0.65px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#next {
+  position: relative !important;
+  top: 30px;
+  left: 1274px;
+  width: 38px;
+  height: 16px;
+  text-align: center;
+  font: normal normal bold 13px/16px Montserrat;
+  letter-spacing: 0.65px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.bagSelection_image-row {
+  display: flex;
+  position: relative;
+  top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bagSelectionImg {
+  position: relative;
+  top: 28px;
+  width: 214px;
+  height: 256px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+#bagSelectionheading {
+  position: relative;
+  top: 75px;
+  font-family: Montserrat;
+  font-weight: 400;
+}
+
+.cardQuantity {
+  position: relative;
+  top: 14px;
+  left: 25px;
+  width: 180px;
+  height: 15px;
+  text-align: left;
+  font: normal normal bold 12px/15px Montserrat;
+  letter-spacing: 0.6px;
+  color: #5c5c54;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+/* End of bag Selection Page stylesheet */
+
+/* Start of Roast Page stylesheet */
+
+#product_container {
+  position: relative;
+  top: 96px;
+  height: 70%;
+  width: 100%;
+  overflow: auto;
+}
+
+.product_card {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 15px;
+  width: 295px;
+  height: 423px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.product_card:hover {
+  border: 2px solid #9d1c30;
+  transition: border 0.2s ease-out;
+}
+
+.product_card img {
+  width: 278px;
+  height: 278px;
+}
+
+.productDetails {
+  position: relative;
+  top: 11px;
+  left: 5px;
+  width: 240px;
+  height: 22px;
+  text-align: left;
+  font: normal normal bold 18px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #1a1818;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.productSubDetails {
+  position: relative;
+  top: 23px;
+  left: 5px;
+  width: 267px;
+  height: 14px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #5c5c54;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.counter {
+  position: relative;
+  top: 52px;
+  left: 5px;
+  width: 83px;
+  height: 24px;
+  /* UI Properties */
+  opacity: 1;
+}
+
+.product_quantity {
+  position: relative;
+  top: 76px;
+  left: 550px;
+  width: 262px;
+  height: 18px;
+  font: normal normal bold 11px/18px Montserrat;
+  text-align: center;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+/* End of Roast Page stylesheet */
+
+/* Start of Grind Screen Stylesheet */
+
+#grind_types_container {
+  position: relative;
+  top: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grind_types_item {
+  top: 113px;
+  left: 39px;
+  width: 202px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.grind_types_item:hover {
+  border: 2px solid #9d1c30;
+  transition: border 0.2s ease-out;
+}
+
+.grind_types_item img {
+  position: relative;
+  bottom: 33px;
+  width: 88px;
+  height: 77px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.grindVariantCategory {
+  position: relative;
+  top: 33px;
+  right: 2px;
+  width: 144px;
+  height: 29px;
+  text-align: left;
+  font: normal normal bold 24px/29px Montserrat;
+  letter-spacing: 0px;
+  color: #979792;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.grindVariantItem {
+  position: relative;
+  top: 39px;
+  left: 4px;
+  width: 157px;
+  height: 20px;
+  text-align: left;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+/* End of Grind Screen Stylesheet */
+
+/* Start of Frequency Page stylesheet */
+
+#frequencyHeading {
+  position: relative;
+  top: 149px;
+  font-family: Montserrat;
+  font-weight: 400;
+}
+
+#frequency_container {
+  position: relative;
+  top: 159px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frequency_card {
+  width: 397px;
+  height: 99px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  font: optional;
+  font: normal normal bold 24px/29px Montserrat;
+  letter-spacing: 0px;
+  color: #979792;
+  text-transform: capitalize;
+  text-align: center;
+  cursor: pointer;
+}
+
+.frequency_card:hover {
+  border: 2px solid #9d1c30;
+  transition: border 0.2s ease-out;
+}
+
+#subscription_delivery_info {
+  display: flex;
+  position: relative;
+  top: 246px;
+  left: 478px;
+  width: 613px;
+  height: 20px;
+  text-align: left;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+#highlight_text {
+  position: relative;
+  top: 240px;
+  left: 892px;
+  width: 131px;
+  height: 4px;
+  /* UI Properties */
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+/* End of Frequency Screen Stylesheet */
+
+/* Start of addOn Screen Stylesheet */
+
+#addOn_wrapperContainer {
+  position: relative;
+  top: 10px;
+  left: 0px;
+  width: 100%;
+  height: 96.41vh;
+  /* UI Properties */
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+}
+
+#addOn_item_container {
+  position: relative;
+  top: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addOn_item {
+  top: 233px;
+  left: 387px;
+  width: 318px;
+  height: 438px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.addOn_item:hover {
+  border: 2px solid #9d1c30;
+  transition: border 0.2s ease-out;
+}
+
+.addOn_item img {
+  bottom: 20px;
+  position: relative;
+  width: 278px;
+  height: 278px;
+  /* UI Properties */
+  background: transparent url("img/Image 1.png") 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.addOn_item_name {
+  position: relative;
+  width: 196px;
+  right: 40px;
+  height: 22px;
+  text-align: left;
+  font: normal normal bold 18px/22px Montserrat;
+  letter-spacing: 0px;
+  color: #1a1818;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.addOn_select_button {
+  position: relative;
+  top: 27px;
+  width: 278px;
+  height: 54px;
+  background: #9d1c30 0% 0% no-repeat padding-box;
+  color: #ffffff;
+  text-align: center;
+  font: normal normal 600 13px/16px Montserrat;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.navigation_container {
+  position: relative;
+  top: 42px;
+  left: 310px;
+  width: 821px;
+  height: 14px;
+  opacity: 1;
+}
+
+#bag_selection {
+  top: 60px;
+  left: 310px;
+  width: 100px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+#roast {
+  top: 60px;
+  left: 476px;
+  width: 128px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #9d1c30;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+#grind {
+  top: 60px;
+  left: 670px;
+  width: 80px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+#frequency {
+  top: 60px;
+  left: 815px;
+  width: 76px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+#addOn {
+  top: 60px;
+  left: 955px;
+  width: 58px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+#summary {
+  top: 60px;
+  left: 1067px;
+  width: 64px;
+  height: 14px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 11px/14px Montserrat;
+  letter-spacing: 0.55px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+/* End of addOn Screen Stylesheet */
+
+/* Start of Summary Screen Stylesheet */
+
+#summarySubHeading {
+  position: relative;
+  top: 68px;
+  left: 390px;
+  width: 660px;
+  height: 20px;
+  text-align: center;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+.summarySheetContainer {
+  position: relative;
+  top: 106px;
+  left: 155px;
+  width: 1130px;
+  height: 460px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+#cart_product_image {
+  position: relative;
+  top: 40px;
+  left: 40px;
+  width: 278px;
+  height: 278px;
+  /* UI Properties */
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+#img_heading {
+  position: relative;
+  top: 56px;
+  left: 11px;
+  width: 230px;
+  height: 29px;
+  text-align: center;
+  font: normal normal bold 24px/29px Montserrat;
+  letter-spacing: 0px;
+  color: #979792;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+#img_subHeading {
+  position: relative;
+  top: 64px;
+  left: 36px;
+  width: 278px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  letter-spacing: 0px;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+  
+}
+
+#product_details_box {
+  position: relative;
+  bottom: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.item_details {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 18px;
+  text-align: left;
+  font: normal normal bold 14px/18px Montserrat;
+  letter-spacing: 1.4px;
+  color: #1a1818;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
+.item_subdetails {
+  position: relative;
+  top: 5px;
+  width: 163px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+#price_details_box {
+  position: relative;
+  width: 450px;
+  left: 680px;
+  bottom: 498px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.coffee {
+  position: relative;
+  top: 15px;
+  right: 336px;
+  width: 48px;
+  height: 20px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+.shipping {
+  position: relative;
+  top: 38px;
+  right: 323px;
+  width: 62px;
+  height: 20px;
+  text-align: center;
+  font: normal normal normal 15px/25px Roboto;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+.subtotal {
+  position: relative;
+  top: 88px;
+  right: 301px;
+  width: 84px;
+  height: 22px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal bold 18px/16px Montserrat;
+  letter-spacing: 0px;
+  color: #1a1818;
+  opacity: 1;
+}
+
+#price_details_box button {
+  position: relative;
+  top: 135px;
+  right: 40px;
+  width: 344px;
+  height: 54px;
+  background: #9d1c30 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font: normal normal 600 13px/16px Montserrat;
+  letter-spacing: 1.3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+}
+
+.add_to_cart {
+  position: relative;
+  top: 166px;
+  right: 50px;
+  width: 334px;
+  height: 16px;
+  /* UI Properties */
+  text-align: center;
+  font: normal normal 600 13px/16px Montserrat;
+  letter-spacing: 1.3px;
+  color: #9d1c30;
+  text-transform: uppercase;
+  opacity: 1;
+}
+/* End of Summary Screen Stylesheet */
+
+
