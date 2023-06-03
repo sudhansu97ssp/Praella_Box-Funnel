@@ -10,7 +10,7 @@
   <body>
     <section id="addOn_wrapperContainer">
       <div>
-        <div id="back" onclick="window.location.href='addOn.html';">
+        <div id="back" onclick="window.location.href='add.html'; ">
           <div style="display: flex">
             <img
               src="./assets/backward.svg"
@@ -20,12 +20,12 @@
           </div>
         </div>
         <div class="navigation_container">
-          <span id="bag_selection">Bag selection</span><span>----</span
-          ><span id="roast">Roast preference</span><span>----</span
-          ><span id="grind">Grind Type</span><span>----</span
-          ><span id="frequency">Frequency</span><span>----</span
-          ><span id="addOn">Add ons</span><span>----</span
-          ><span id="summary">Summary</span>
+          <span id="bagSelection" class="screen">Bag selection</span><span>----</span
+          ><span id="roast" class="screen">Roast preference</span><span>----</span
+          ><span id="grind" class="screen">Grind Type</span><span>----</span
+          ><span id="frequency" class="screen">Frequency</span><span>----</span
+          ><span id="addOn" class="screen">Add ons</span><span>----</span
+          ><span id="summary" class="screen">Summary</span>
         </div>
       </div>
 
@@ -45,13 +45,21 @@
         >
           <img id="cart_product_image" src="" alt="product_image" />
           <div id="img_heading"></div>
-          <div id="img_subHeading"><span style="color: #9d1c30;">1lb bags</span> • Delivered right to your door!</div>
+          <div id="img_subHeading">
+            <span style="color: #9d1c30">1lb bags</span> • Delivered right to
+            your door!
+          </div>
         </div>
         <div id="product_details_box">
           <div style="width: 400px">
             <div class="item_details">
               Amount:
-              <div style="color: #9d1c30; cursor: pointer" onclick="window.location.href='bagSelection.html';">Edit</div>
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='bag.html';"
+              >
+                Edit
+              </div>
             </div>
             <div class="item_subdetails">4 bags</div>
           </div>
@@ -59,7 +67,12 @@
           <div style="width: 400px">
             <div class="item_details" style="top: 50px">
               Roast Preference:
-              <div style="color: #9d1c30; cursor: pointer" onclick="window.location.href='roast.html';">Edit</div>
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='roast.html';"
+              >
+                Edit
+              </div>
             </div>
             <div class="item_subdetails" style="top: 60px">
               Lavazza Coffee Van Houtte
@@ -69,14 +82,24 @@
           <div style="width: 400px">
             <div class="item_details" style="top: 110px">
               Grind Type:
-              <div style="color: #9d1c30; cursor: pointer" onclick="window.location.href='grind.html';">Edit</div>
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='grind.html';"
+              >
+                Edit
+              </div>
             </div>
             <div class="item_subdetails" style="top: 120px">Press • Coarse</div>
           </div>
           <div style="width: 400px">
             <div class="item_details" style="top: 150px">
               Frequency:
-              <div style="color: #9d1c30; cursor: pointer" onclick="window.location.href='frequency.html';">Edit</div>
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='frequency.html';"
+              >
+                Edit
+              </div>
             </div>
             <div class="item_subdetails" style="top: 160px">
               Every Other Month
@@ -85,7 +108,12 @@
           <div style="width: 400px">
             <div class="item_details" style="top: 190px">
               Add-Ons:
-              <div style="color: #9d1c30; cursor: pointer" onclick="window.location.href='addOn.html';">Edit</div>
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='add.html';"
+              >
+                Edit
+              </div>
             </div>
             <div class="item_subdetails" style="top: 200px">Coffee Filter</div>
           </div>
