@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Box Funnel</title>
+  </head>
+  <body>
+    <section id="wrapperContainer">
+      <div>
+        <div id="back" onclick="window.location.href='roast.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            back
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bag_selection">Bag selection</span><span>----</span
+          ><span id="roast">Roast preference</span><span>----</span
+          ><span id="grind">Grind Type</span><span>----</span
+          ><span id="frequency">Frequency</span><span>----</span
+          ><span id="addOn">Add ons</span><span>----</span
+          ><span id="summary">Summary</span>
+        </div>
+        <div id="next" onclick="window.location.href='frequency.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            next
+          </div>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>Choose your grind type.</h2>
+      </div>
+      <div id="grind_types_container">
+        <div
+          class="grind_types_item"
+          onclick="window.location.href='frequency.html';"
+        >
+          <img src="./assets/Group 434.svg" alt="" />
+          <div class="grindVariantCategory">Beans</div>
+          <div class="grindVariantItem">Whole Beans</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 404.svg" alt="" />
+          <div class="grindVariantCategory">Press</div>
+          <div class="grindVariantItem">Coarse</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 464.svg" alt="" />
+          <div class="grindVariantCategory">Drip</div>
+          <div class="grindVariantItem">Medium</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 458.svg" alt="" />
+          <div class="grindVariantCategory">Cone</div>
+          <div class="grindVariantItem">Medium-Fine</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 410.svg" alt="" />
+          <div class="grindVariantCategory">Espresso</div>
+          <div class="grindVariantItem">Fine</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 432.svg" alt="" />
+          <div class="grindVariantCategory">Extra Fine</div>
+          <div class="grindVariantItem">The Finest</div>
+        </div>
+      </div>
+    </section>
+    <script defer src="script.js"></script>
+  </body>
+</html>

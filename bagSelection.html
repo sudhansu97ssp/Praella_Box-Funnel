@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Box Funnel</title>
+  </head>
+  <body>
+    <section id="wrapperContainer">
+      <div>
+        <div id="back" onclick="window.location.href='index.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            back
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bag_selection">Bag selection</span><span>----</span
+          ><span id="roast">Roast preference</span><span>----</span
+          ><span id="grind">Grind Type</span><span>----</span
+          ><span id="frequency">Frequency</span><span>----</span
+          ><span id="addOn">Add ons</span><span>----</span
+          ><span id="summary">Summary</span>
+        </div>
+        <div id="next" onclick="window.location.href='roast.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            next
+          </div>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>How many bags of coffee would you like?</h2>
+      </div>
+
+      <div class="bagSelection_image-row">
+        <div class="image1" onclick="handleClickQuantity(this)">
+          <img src="./assets/singleBag.svg" class="bagSelectionImg" style="width:80px" />
+          <div class="imgCardText">4 Bags</div>
+          <div class="img1SubTextWrapper">
+            <span style="color: #9d1c30">$18.00 </span><span>+</span> $6
+            Shipping
+          </div>
+          <div class="cardQuantity">(1LB total)</div>
+        </div>
+
+        <div class="image2"  onclick="handleClickQuantity(this)">
+          <div style="background-color: #9d1c30; color: #fff; width: 100px">
+            5% OFF
+          </div>
+          <img src="./assets/doubleBag.svg" class="bagSelectionImg" style="width:146px" />
+          <div class="imgCardText">8 Bags</div>
+          <div class="img2SubTextWrapper">
+            <span><s>$36.00</s></span>
+            <span style="color: #9d1c30"
+              >$34.20 <span>+</span> Free Shipping</span
+            ><span>+</span> $6 Shipping
+          </div>
+          <div class="cardQuantity">(2LBs total)</div>
+        </div>
+
+        <div class="image3"  onclick="handleClickQuantity(this)">
+          <div
+            style="
+              background-color: #9d1c30;
+              color: #fff;
+              width: 100px;
+              height: 30px;
+            "
+          >
+            10% OFF
+          </div>
+          <img src="./assets/thripleBag.svg" class="bagSelectionImg" />
+          <div class="imgCardText">12 Bags</div>
+          <div class="img3SubTextWrapper">
+            <span><s>$54.00</s></span>
+            <span style="color: #9d1c30"
+              >$48.60 <span>+</span> Free Shipping</span
+            ><span>+</span> $6 Shipping
+          </div>
+          <div class="cardQuantity">(3LBs total)</div>
+        </div>
+      </div>
+    </section>
+    <script defer src="script.js"></script>
+  </body>
+</html>
