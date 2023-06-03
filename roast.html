@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Box Funnel</title>
+  </head>
+  <body>
+    <section id="addOn_wrapperContainer">
+      <div>
+        <div id="back" onclick="window.location.href='bagSelection.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            back
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bag_selection">Bag selection</span><span>----</span
+          ><span id="roast">Roast preference</span><span>----</span
+          ><span id="grind">Grind Type</span><span>----</span
+          ><span id="frequency">Frequency</span><span>----</span
+          ><span id="addOn">Add ons</span><span>----</span
+          ><span id="summary">Summary</span>
+        </div>
+        <div id="next" onclick="window.location.href='grind.html';">
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            next
+          </div>
+        </div>
+      </div>
+
+      <div class="product_quantity">
+       
+      </div>
+      <div id="product_container">
+        <div class="product_card" onclick="window.location.href='grind.html';">
+          <img src="./assets/coffee_bean_pot.png" alt="product_image" />
+          <div class="productDetails">Lavazza Coffee</div>
+          <div class="productSubDetails">exotic • rich • aromatic</div>
+          <div class="counter">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script defer src="script.js"></script>
+  </body>
+</html>
