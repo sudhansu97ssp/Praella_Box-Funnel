@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+#wrapperContainer {
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
+.heading {
+  margin-top: 0;
+  font-family: Montserrat;
+  font-weight: 400;
+}
+
+.image_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgstyle {
+  width: 357px;
+  height: 256px;
+  margin: 10px;
+}
+
+.image1 {
+  top: 183px;
+  left: 75px;
+  width: 397px;
+  height: 381px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.image2 {
+  top: 183px;
+  left: 522px;
+  width: 397px;
+  height: 381px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  margin-left: 30px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.image3 {
+  top: 183px;
+  left: 969px;
+  width: 397px;
+  height: 381px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  margin-left: 30px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.imgCardText {
+  position: relative;
+  top: 11px;
+  left: 25px;
+  width: 183px;
+  height: 29px;
+  text-align: left;
+  font: normal normal bold 24px/29px Montserrat;
+  letter-spacing: 0px;
+  color: #979792;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.img1SubTextWrapper {
+  top: 15px;
+  position: relative;
+  left: 25px;
+  width: 340px;
+  height: 20px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+  font-family: roboto;
+  font-size: 15px;
+}
+
+.img2SubTextWrapper {
+  top: 21px;
+  position: relative;
+  left: 25px;
+  width: 300px;
+  height: 20px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+  font-family: roboto;
+  font-size: 15px;
+}
+
+.img3SubTextWrapper {
+  position: relative;
+  top: 21px;
+  left: 25px;
+  width: 300px;
+  height: 20px;
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
+  font-family: roboto;
+  font-size: 15px;
+}
+
