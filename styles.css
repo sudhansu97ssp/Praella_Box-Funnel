@@ -503,7 +503,7 @@
   opacity: 1;
 }
 
-#bag_selection {
+#bagSelection {
   top: 60px;
   left: 310px;
   width: 100px;
@@ -526,7 +526,7 @@
   text-align: center;
   font: normal normal bold 11px/14px Montserrat;
   letter-spacing: 0.55px;
-  color: #9d1c30;
+  /* color: #9d1c30; */
   text-transform: uppercase;
   opacity: 1;
 }
@@ -542,7 +542,7 @@
   letter-spacing: 0.55px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 #frequency {
@@ -556,7 +556,7 @@
   letter-spacing: 0.55px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 #addOn {
@@ -570,7 +570,7 @@
   letter-spacing: 0.55px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 #summary {
@@ -584,7 +584,7 @@
   letter-spacing: 0.55px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 
 /* End of addOn Screen Stylesheet */
