@@ -17,7 +17,7 @@
               alt="back"
               style="position: relative; right: 20px"
             />
-            back
+            <button class="backBtn">back</button>
           </div>
         </div>
         <div class="navigation_container">
@@ -28,14 +28,14 @@
           ><span id="addOn" class="screen">Add ons</span><span>----</span
           ><span id="summary" class="screen">Summary</span>
         </div>
-        <div id="next" onclick="window.location.href='add.html';">
+        <div id="next">
           <div style="display: flex">
             <img
               src="./assets/forward.svg"
               alt="next"
               style="position: relative; left: 65px"
             />
-            next
+            <button class="nextBtn">next</button>
           </div>
         </div>
       </div>
@@ -46,12 +46,12 @@
       <div id="frequency_container">
         <div
           class="frequency_card"
-          onclick="window.location.href='add.html';"
+          data-frequency="Once A Month"
         >
           Once A Month
         </div>
-        <div class="frequency_card">Every Other Month</div>
-        <div class="frequency_card">Every 3 Months</div>
+        <div class="frequency_card" data-frequency="Every Other Month">Every Other Month</div>
+        <div class="frequency_card" data-frequency="Every 3 Months">Every 3 Months</div>
       </div>
 
       <div id="subscription_delivery_info">

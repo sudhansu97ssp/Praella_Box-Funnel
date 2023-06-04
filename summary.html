@@ -16,7 +16,7 @@
               src="./assets/backward.svg"
               style="position: relative; right: 20px"
             />
-            back
+            <button class="backBtn">back</button>
           </div>
         </div>
         <div class="navigation_container">
@@ -45,9 +45,8 @@
         >
           <img id="cart_product_image" src="" alt="product_image" />
           <div id="img_heading"></div>
-          <div id="img_subHeading">
-            <span style="color: #9d1c30">1lb bags</span> • Delivered right to
-            your door!
+          <div id="cartImg_subHeading">
+            
           </div>
         </div>
         <div id="product_details_box">
@@ -61,7 +60,7 @@
                 Edit
               </div>
             </div>
-            <div class="item_subdetails">4 bags</div>
+            <div class="item_subdetails" id="bag_count"></div>
           </div>
 
           <div style="width: 400px">
@@ -74,7 +73,7 @@
                 Edit
               </div>
             </div>
-            <div class="item_subdetails" style="top: 60px">
+            <div class="item_subdetails" style="top: 60px" id="roast_preference">
               Lavazza Coffee Van Houtte
             </div>
           </div>
@@ -89,7 +88,7 @@
                 Edit
               </div>
             </div>
-            <div class="item_subdetails" style="top: 120px">Press • Coarse</div>
+            <div class="item_subdetails" style="top: 120px" id="grind_type"></div>
           </div>
           <div style="width: 400px">
             <div class="item_details" style="top: 150px">
@@ -101,8 +100,8 @@
                 Edit
               </div>
             </div>
-            <div class="item_subdetails" style="top: 160px">
-              Every Other Month
+            <div class="item_subdetails" style="top: 160px" id="frequency_type">
+             
             </div>
           </div>
           <div style="width: 400px">
@@ -115,17 +114,17 @@
                 Edit
               </div>
             </div>
-            <div class="item_subdetails" style="top: 200px">Coffee Filter</div>
+            <div class="item_subdetails" style="top: 200px" id="addOn_items"></div>
           </div>
         </div>
         <div id="price_details_box">
           <div class="coffee">
             Coffee:
-            <div></div>
+            <div id="coffee_price"></div>
           </div>
           <div class="shipping">
             Shipping:
-            <div></div>
+            <div id="shipping_price"></div>
           </div>
           <div class="subtotal">Subtotal:</div>
           <button>Checkout</button>

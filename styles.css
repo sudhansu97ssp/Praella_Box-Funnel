@@ -79,7 +79,7 @@
   opacity: 1;
 }
 
-.img1SubTextWrapper {
+#img1SubTextWrapper {
   top: 15px;
   position: relative;
   left: 25px;
@@ -92,7 +92,7 @@
   font-size: 15px;
 }
 
-.img2SubTextWrapper {
+#img2SubTextWrapper {
   top: 21px;
   position: relative;
   left: 25px;
@@ -105,7 +105,7 @@
   font-size: 15px;
 }
 
-.img3SubTextWrapper {
+#img3SubTextWrapper {
   position: relative;
   top: 21px;
   left: 25px;
@@ -128,12 +128,18 @@
   height: 16px;
   /* UI Properties */
   text-align: center;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.backBtn {
   font: normal normal bold 13px/16px Montserrat;
   letter-spacing: 0.65px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 1;
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 #next {
@@ -143,12 +149,18 @@
   width: 38px;
   height: 16px;
   text-align: center;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nextBtn {
   font: normal normal bold 13px/16px Montserrat;
   letter-spacing: 0.65px;
   color: #1a1818;
   text-transform: uppercase;
-  opacity: 1;
+  border: none;
   cursor: pointer;
+  background: transparent;
 }
 
 .bagSelection_image-row {
@@ -639,7 +651,7 @@
   opacity: 1;
 }
 
-#img_subHeading {
+#cartImg_subHeading {
   position: relative;
   top: 64px;
   left: 36px;
@@ -652,7 +664,6 @@
   letter-spacing: 0px;
   color: #1a1818;
   opacity: 1;
-  
 }
 
 #product_details_box {
@@ -703,13 +714,16 @@
 
 .coffee {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   top: 15px;
-  right: 336px;
-  width: 48px;
+  right: 126px;
+  width: 258px;
   height: 20px;
   /* UI Properties */
   text-align: center;
-  font: normal normal normal 15px/25px Roboto;
+  font-size: 16px; 
+  font-family: roboto;
   letter-spacing: 0px;
   color: #1a1818;
   opacity: 1;
@@ -717,6 +731,8 @@
 
 .shipping {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   top: 38px;
   right: 323px;
   width: 62px;
@@ -772,6 +788,17 @@
   text-transform: uppercase;
   opacity: 1;
 }
+
+#coffee_price {
+  position: relative;
+  
+  width: 48px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal medium 15px/25px Roboto !important;
+  letter-spacing: 0px;
+  color: #9d1c30;
+  opacity: 1;
+}
 /* End of Summary Screen Stylesheet */
-
-
