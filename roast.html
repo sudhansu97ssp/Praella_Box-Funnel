@@ -27,7 +27,7 @@
           ><span id="addOn" class="screen"> Add ons </span><span>----</span
           ><span id="summary" class="screen"> Summary</span>
         </div>
-        <div id="next" onclick="window.location.href='grind.html'; ">
+        <div id="next">
           <div style="display: flex">
             <img
               src="./assets/forward.svg"
@@ -42,14 +42,14 @@
        
       </div>
       <div id="product_container">
-        <div class="product_card" onclick="window.location.href='grind.html';">
+        <div class="product_card" >
           <img src="./assets/coffee_bean_pot.png" alt="product_image" />
           <div class="productDetails">Lavazza Coffee</div>
           <div class="productSubDetails">exotic • rich • aromatic</div>
           <div class="counter">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+            <button id="decreseBtn">-</button>
+            <span>0</span>
+            <button id="increaseBtn">+</button>
           </div>
         </div>
       </div>
