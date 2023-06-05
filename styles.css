@@ -640,10 +640,10 @@
 #img_heading {
   position: relative;
   top: 56px;
-  left: 11px;
+  left: 38px;
   width: 230px;
   height: 29px;
-  text-align: center;
+  text-align: left;
   font: normal normal bold 24px/29px Montserrat;
   letter-spacing: 0px;
   color: #979792;
@@ -734,8 +734,8 @@
   display: flex;
   justify-content: space-between;
   top: 38px;
-  right: 323px;
-  width: 62px;
+  right: 87px;
+  width: 298px;
   height: 20px;
   text-align: center;
   font: normal normal normal 15px/25px Roboto;
@@ -746,9 +746,11 @@
 
 .subtotal {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   top: 88px;
-  right: 301px;
-  width: 84px;
+  right: 85px;
+  width: 300px;
   height: 22px;
   /* UI Properties */
   text-align: center;
@@ -756,6 +758,11 @@
   letter-spacing: 0px;
   color: #1a1818;
   opacity: 1;
+}
+
+#subtotal_price{
+  display: flex;
+  
 }
 
 #price_details_box button {
@@ -791,14 +798,13 @@
 
 #coffee_price {
   position: relative;
-  
   width: 48px;
   height: 20px;
   /* UI Properties */
   text-align: left;
   font: normal normal medium 15px/25px Roboto !important;
   letter-spacing: 0px;
-  color: #9d1c30;
   opacity: 1;
 }
+
 /* End of Summary Screen Stylesheet */
