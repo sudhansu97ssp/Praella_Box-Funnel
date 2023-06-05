@@ -86,12 +86,22 @@ for (let i = 0; i < numOfCards; i++) {
 
   const nameElement = document.createElement("div"); // Create a div element for the product name
   nameElement.className = "productDetails"; // Set the class name for the product name div
-  nameElement.textContent = "Van Houtte"; // Set the text content for the product name
+  const productName1 = "Van Houtte";
+  const productName2 = "Lavazza Coffee";
+  if(i===0){
+    nameElement.textContent = "Lavazza Coffee"; // Set the text content for the product name
+  }else{
+    nameElement.textContent = "Van Houtte";
+  }
 
   const subNameElement = document.createElement("div"); // Create a div element for the product sub details
   subNameElement.className = "productSubDetails"; // Set the class name for the product sub details div
-  subNameElement.textContent = "classic • nutty • round body"; // Set the text content for the product sub details
-
+  if(i===0){
+    subNameElement.textContent = "EXOTIC • RICH • AROMATIC"; // Set the text content for the product sub details
+  }else{
+    subNameElement.textContent = "classic • nutty • round body"; // Set the text content for the product sub details
+  }
+  
   const counter = document.createElement("div"); // Create a div element for the quantity counter
   counter.className = "counter"; // Set the class name for the counter div
 
