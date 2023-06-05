@@ -124,12 +124,13 @@
   position: relative;
   top: 60px;
   left: 98px;
-  width: 40px;
+  width: 70px;
   height: 16px;
   /* UI Properties */
   text-align: center;
   opacity: 1;
   cursor: pointer;
+  z-index: 2;
 }
 
 .backBtn {
@@ -145,7 +146,7 @@
 #next {
   position: relative !important;
   top: 30px;
-  left: 1274px;
+  left: 88.54vw;
   width: 38px;
   height: 16px;
   text-align: center;
@@ -277,7 +278,7 @@
 .product_quantity {
   position: relative;
   top: 76px;
-  left: 550px;
+  left: 43.33vw;
   width: 262px;
   height: 18px;
   font: normal normal bold 11px/18px Montserrat;
@@ -427,7 +428,7 @@
   display: flex;
   position: relative;
   top: 246px;
-  left: 478px;
+  left: 35.52vw;
   width: 613px;
   height: 20px;
   text-align: left;
@@ -439,8 +440,10 @@
 
 #highlight_text {
   position: relative;
-  top: 240px;
-  left: 892px;
+  display: flex;
+  justify-content: center;
+  top: 246px;
+  left: 63.98vw;
   width: 131px;
   height: 4px;
   /* UI Properties */
@@ -535,8 +538,8 @@
 .navigation_container {
   position: relative;
   top: 42px;
-  left: 310px;
-  width: 821px;
+  left: 21px;
+  width: 95vw;
   height: 14px;
   opacity: 1;
 }
@@ -600,7 +603,7 @@
 #addOn {
   top: 60px;
   left: 955px;
-  width: 58px;
+  width: 4.02vw;
   height: 14px;
   /* UI Properties */
   text-align: center;
@@ -858,3 +861,6 @@
 }
 
 /* End of Summary Screen Stylesheet */
+
+
+
