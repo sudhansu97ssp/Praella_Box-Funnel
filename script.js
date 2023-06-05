@@ -96,6 +96,8 @@ for (let i = 0; i < numOfCards; i++) {
   counter.className = "counter"; // Set the class name for the counter div
 
   const decreaseBtn = document.createElement("button"); // Create a button element for decreasing quantity
+  decreaseBtn.className="decrease_btn";
+  
   decreaseBtn.textContent = "-"; // Set the text content for the decrease button
   decreaseBtn.addEventListener("click", () => decreaseQuantity(i)); // Add event listener for clicking on the decrease button
 
@@ -104,6 +106,7 @@ for (let i = 0; i < numOfCards; i++) {
   quantityElement.textContent = productQuantities[i]; // Set the initial quantity text
 
   const increaseBtn = document.createElement("button"); // Create a button element for increasing quantity
+  increaseBtn.className="increase_btn";
   increaseBtn.textContent = "+"; // Set the text content for the increase button
   increaseBtn.addEventListener("click", () => increaseQuantity(i)); // Add event listener for clicking on the increase button
 
@@ -541,3 +544,32 @@ if (subtotal) {
   }
 }
 
+// Retrieving checkout_btn element from the DOM
+const checkout_btn=document.getElementById("checkout_btn");
+
+if(checkout_btn){
+  checkout_btn.addEventListener('click', function() {
+    // Clear local storage
+    localStorage.clear();
+  
+    // Show popup
+    var popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = '<p>Product checkout complete! Please wait while we navigate you to the prefernce Selection Page !!!</p>';
+  
+    document.body.appendChild(popup);
+  
+    // Remove popup after 2 seconds
+    setTimeout(function() {
+      popup.classList.add('hidden');
+      setTimeout(function() {
+        popup.remove();
+      }, 500);
+    }, 2000);
+  
+    // Navigate to index.html after 2 seconds
+    setTimeout(function() {
+      window.location.href = 'index.html';
+    }, 2000);
+  });
+}

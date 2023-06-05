@@ -287,6 +287,32 @@
   opacity: 1;
 }
 
+.decrease_btn {
+  position: relative;
+  width: 26px;
+  right: 5px;
+  height: 24px;
+  border: none;
+  border-radius: 10px;
+  /* UI Properties */
+  background: #E6E6E5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.increase_btn{
+  position: relative;
+  left: 5px;
+  width: 26px;
+  height: 24px;
+  border: none;
+  border-radius: 10px;
+  /* UI Properties */
+  background: #E6E6E5 0% 0% no-repeat padding-box;
+  opacity: 1;
+  cursor: pointer;
+}
+
 /* End of Roast Page stylesheet */
 
 /* Start of Grind Screen Stylesheet */
@@ -722,7 +748,7 @@
   height: 20px;
   /* UI Properties */
   text-align: center;
-  font-size: 16px; 
+  font-size: 16px;
   font-family: roboto;
   letter-spacing: 0px;
   color: #1a1818;
@@ -760,9 +786,8 @@
   opacity: 1;
 }
 
-#subtotal_price{
+#subtotal_price {
   display: flex;
-  
 }
 
 #price_details_box button {
@@ -800,11 +825,36 @@
   position: relative;
   width: 48px;
   height: 20px;
-  /* UI Properties */
   text-align: left;
   font: normal normal medium 15px/25px Roboto !important;
   letter-spacing: 0px;
   opacity: 1;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 400px;
+  height: 100px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #008000;
+  font-family: Montserrat;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup p {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /* End of Summary Screen Stylesheet */
