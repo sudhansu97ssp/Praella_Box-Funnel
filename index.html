@@ -8,34 +8,498 @@
     <title>Box Funnel</title>
   </head>
   <body>
-    <section id="wrapperContainer">
+    <section id="header" >
       <div class="heading">
         <h2>Who is this for?</h2>
       </div>
       <div class="image_row">
-        <div class="image1" onclick="handleClick(this)">
+        <div id="image1" class="image_style" onclick="handleClick(this)">
           <img src="./assets/coffee_cup.png" class="imgstyle" />
           <div class="imgCardText">For Myself</div>
-          <div  id="img1SubTextWrapper" class="imgSubText">
-            <span style="color: #9D1C30">1lb bags </span> • Delivered right to your door!
+          <div id="img1SubTextWrapper" class="imgSubText">
+            <span style="color: #9d1c30">1lb bags </span> • Delivered right to
+            your door!
           </div>
         </div>
-        <div class="image2" onclick="handleClick(this)">
+        <div id="image2" class="image_style" onclick="handleClick(this)">
           <img src="./assets/Office_Coffee.png" class="imgstyle" />
           <div class="imgCardText">For The Office</div>
           <div id="img2SubTextWrapper" class="imgSubText">
-            <span style="color: #9D1C30">5lb bags</span> • No more coffee runs at work!
+            <span style="color: #9d1c30">5lb bags</span> • No more coffee runs
+            at work!
           </div>
         </div>
-        <div class="image3" onclick="handleClick(this)">
+        <div id="image3" class="image_style" onclick="handleClick(this)">
           <img src="./assets/coffee_fill.png" class="imgstyle" />
           <div class="imgCardText">It's a Gift</div>
           <div id="img3SubTextWrapper" class="imgSubText">
-            <span style="color: #9D1C30">1lb bags</span> • Give the gift of coffee.
+            <span style="color: #9d1c30">1lb bags</span> • Give the gift of
+            coffee.
           </div>
+        </div>
+      </div>
+    </section>
+    <section id="bag_section" class="section-container">
+      <div>
+        <div class="back">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection</span
+          ><span>----</span
+          ><span id="roast" class="screen">Roast preference</span
+          ><span>----</span><span id="grind" class="screen">Grind Type</span
+          ><span>----</span><span id="frequency" class="screen">Frequency</span
+          ><span>----</span><span id="addOn" class="screen">Add ons</span
+          ><span>----</span><span id="summary" class="screen">Summary</span>
+        </div>
+        <div class="next" >
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            <button class="nextBtn">next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>How many bags of coffee would you like?</h2>
+      </div>
+
+      <div class="bagSelection_image-row">
+        <div id="image1" class="bag_img" onclick="handleClickQuantity(this)">
+          <img
+            src="./assets/singleBag.svg"
+            class="bagSelectionImg"
+            style="width: 80px"
+          />
+          <div class="imgCardText">4 Bags</div>
+          <div id="img1SubTextWrapper" class="price">
+            <span>$18.00 </span><span>+ $6 Shipping</span>
+          </div>
+          <div class="cardQuantity">(1LB total)</div>
+        </div>
+
+        <div id="image2" class="bag_img" onclick="handleClickQuantity(this)">
+          <div style="background-color: #9d1c30; color: #fff; width: 100px">
+            5% OFF
+          </div>
+          <img
+            src="./assets/doubleBag.svg"
+            class="bagSelectionImg"
+            style="width: 146px"
+          />
+          <div class="imgCardText">8 Bags</div>
+          <div id="img2SubTextWrapper" class="price">
+            <span><s>$36.00</s></span>
+            <span style="color: #9d1c30"> $34.20</span><span> + </span
+            ><span>Free Shipping</span>
+          </div>
+          <div class="cardQuantity">(2LBs total)</div>
+        </div>
+
+        <div id="image3" class="bag_img" onclick="handleClickQuantity(this)">
+          <div
+            style="
+              background-color: #9d1c30;
+              color: #fff;
+              width: 100px;
+              height: 30px;
+            "
+          >
+            10% OFF
+          </div>
+          <img src="./assets/thripleBag.svg" class="bagSelectionImg" />
+          <div class="imgCardText">12 Bags</div>
+          <div id="img3SubTextWrapper" class="price">
+            <span><s>$54.00</s></span>
+            <span style="color: #9d1c30"> $48.60</span><span> + </span
+            ><span>Free Shipping</span>
+          </div>
+          <div class="cardQuantity">(3LBs total)</div>
+        </div>
+      </div>
+    </section>
+    <section id="roast_pref" class="section-container">
+      <div>
+        <div class="back" >
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection </span
+          ><span>----</span
+          ><span id="roast" class="screen"> Roast preference </span
+          ><span>----</span><span id="grind" class="screen"> Grind Type </span
+          ><span>----</span
+          ><span id="frequency" class="screen"> Frequency </span
+          ><span>----</span><span id="addOn" class="screen"> Add ons </span
+          ><span>----</span><span id="summary" class="screen"> Summary</span>
+        </div>
+        <div class="next">
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            <button
+              class="nextBtn"
+            >
+              next
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product_quantity"></div>
+      <div id="product_container"></div>
+    </section>
+    <section id="grind_types" class="section-container">
+      <div>
+        <div class="back">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection</span
+          ><span>----</span
+          ><span id="roast" class="screen">Roast preference</span
+          ><span>----</span><span id="grind" class="screen">Grind Type</span
+          ><span>----</span><span id="frequency" class="screen">Frequency</span
+          ><span>----</span><span id="addOn" class="screen">Add ons</span
+          ><span>----</span><span id="summary" class="screen">Summary</span>
+        </div>
+        <div class="next" >
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            <button class="nextBtn">next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>Choose your grind type.</h2>
+      </div>
+      <div id="grind_types_container">
+        <div class="grind_types_item">
+          <img src="./assets/Group 434.svg" alt="" />
+          <div class="grindVariantCategory">Beans</div>
+          <div class="grindVariantItem">Whole Beans</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 404.svg" alt="" />
+          <div class="grindVariantCategory">Press</div>
+          <div class="grindVariantItem">Coarse</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 464.svg" alt="" />
+          <div class="grindVariantCategory">Drip</div>
+          <div class="grindVariantItem">Medium</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 458.svg" alt="" />
+          <div class="grindVariantCategory">Cone</div>
+          <div class="grindVariantItem">Medium-Fine</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 410.svg" alt="" />
+          <div class="grindVariantCategory">Espresso</div>
+          <div class="grindVariantItem">Fine</div>
+        </div>
+
+        <div class="grind_types_item">
+          <img src="./assets/Group 432.svg" alt="" />
+          <div class="grindVariantCategory">Extra Fine</div>
+          <div class="grindVariantItem">The Finest</div>
+        </div>
+      </div>
+    </section>
+    <section id="frequencyType" class="section-container">
+      <div>
+        <div class="back">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              alt="back"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection</span
+          ><span>----</span
+          ><span id="roast" class="screen">Roast preference</span
+          ><span>----</span><span id="grind" class="screen">Grind Type</span
+          ><span>----</span><span id="frequency" class="screen">Frequency</span
+          ><span>----</span><span id="addOn" class="screen">Add ons</span
+          ><span>----</span><span id="summary" class="screen">Summary</span>
+        </div>
+        <div class="next" >
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              alt="next"
+              style="position: relative; left: 65px"
+            />
+            <button class="nextBtn">next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="frequencyHeading">
+        <h2>How often would you like to receive your coffee?</h2>
+      </div>
+      <div id="frequency_container">
+        <div class="frequency_card" data-frequency="Once A Month">
+          Once A Month
+        </div>
+        <div class="frequency_card" data-frequency="Every Other Month">
+          Every Other Month
+        </div>
+        <div class="frequency_card" data-frequency="Every 3 Months">
+          Every 3 Months
+        </div>
+      </div>
+
+      <div id="subscription_delivery_info">
+        <img src="./assets/warn.svg" alt="warn" />
+        <div style="margin-left: 10px">
+          All subscription orders will be roasted and shipped on the 1st of
+          every month.
+        </div>
+      </div>
+      <div id="highlight_text">
+        <img src="./assets/straight_line.svg" alt="line" />
+      </div>
+    </section>
+    <section id="addOn_wrapperContainer" class="section-container">
+      <div>
+        <div class="back">
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection</span
+          ><span>----</span
+          ><span id="roast" class="screen">Roast preference</span
+          ><span>----</span><span id="grind" class="screen">Grind Type</span
+          ><span>----</span><span id="frequency" class="screen">Frequency</span
+          ><span>----</span><span id="addOn" class="screen">Add ons</span
+          ><span>----</span><span id="summary" class="screen">Summary</span>
+        </div>
+        <div class="next" >
+          <div style="display: flex">
+            <img
+              src="./assets/forward.svg"
+              style="position: relative; left: 65px"
+            />
+            <button class="nextBtn">next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>Select Add Ons:</h2>
+      </div>
+
+      <div id="addOn_item_container">
+        <div class="addOn_item">
+          <img src="./assets/coffee_filter.png" alt="" />
+          <div class="addOn_item_name">Coffee Filter</div>
+          <button class="addOn_select_button">Select</button>
+        </div>
+
+        <div class="addOn_item">
+          <img src="./assets/Spreso.png" alt="" />
+          <div class="addOn_item_name">Hand Spreso</div>
+          <button class="addOn_select_button">Select</button>
+        </div>
+
+        <div class="addOn_item">
+          <img src="./assets/cookies.png" alt="" />
+          <div class="addOn_item_name">Classic Cookies</div>
+          <button class="addOn_select_button">Select</button>
+        </div>
+
+        <div class="addOn_item">
+          <img src="./assets/Coffee_mug.png" alt="" />
+          <div class="addOn_item_name">Coffee Mug</div>
+          <button class="addOn_select_button">Select</button>
+        </div>
+      </div>
+    </section>
+    <section id="addOn_wrapperContainer" class="section-container">
+      <div>
+        <div class="back" >
+          <div style="display: flex">
+            <img
+              src="./assets/backward.svg"
+              style="position: relative; right: 20px"
+            />
+            <button class="backBtn">back</button>
+          </div>
+        </div>
+        <div class="navigation_container">
+          <span id="bagSelection" class="screen">Bag selection</span
+          ><span>----</span
+          ><span id="roast" class="screen">Roast preference</span
+          ><span>----</span><span id="grind" class="screen">Grind Type</span
+          ><span>----</span><span id="frequency" class="screen">Frequency</span
+          ><span>----</span><span id="addOn" class="screen">Add ons</span
+          ><span>----</span><span id="summary" class="screen">Summary</span>
+        </div>
+      </div>
+
+      <div id="bagSelectionheading">
+        <h2>Order Summary</h2>
+      </div>
+      <div id="summarySubHeading">
+        You’ll be able to change or cancel this subscription at anytime.
+      </div>
+      <div class="summarySheetContainer">
+        <div
+          style="
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+          "
+        >
+          <img id="cart_product_image" src="" alt="product_image" />
+          <div id="img_heading"></div>
+          <div id="cartImg_subHeading"></div>
+        </div>
+        <div id="product_details_box">
+          <div style="width: 400px">
+            <div class="item_details">
+              Amount:
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='bag.html';"
+              >
+                Edit
+              </div>
+            </div>
+            <div class="item_subdetails" id="bag_count"></div>
+          </div>
+
+          <div style="width: 400px">
+            <div class="item_details" style="top: 50px">
+              Roast Preference:
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='roast.html';"
+              >
+                Edit
+              </div>
+            </div>
+            <div
+              class="item_subdetails"
+              style="top: 60px; width: 120px"
+              id="roast_preference"
+            >
+              Lavazza Coffee Van Houtte
+            </div>
+          </div>
+
+          <div style="width: 400px">
+            <div class="item_details" style="top: 110px">
+              Grind Type:
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='grind.html';"
+              >
+                Edit
+              </div>
+            </div>
+            <div
+              class="item_subdetails"
+              style="top: 120px"
+              id="grind_type"
+            ></div>
+          </div>
+          <div style="width: 400px">
+            <div class="item_details" style="top: 150px">
+              Frequency:
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='frequency.html';"
+              >
+                Edit
+              </div>
+            </div>
+            <div
+              class="item_subdetails"
+              style="top: 160px"
+              id="frequency_type"
+            ></div>
+          </div>
+          <div style="width: 400px">
+            <div class="item_details" style="top: 190px">
+              Add-Ons:
+              <div
+                style="color: #9d1c30; cursor: pointer"
+                onclick="window.location.href='add.html';"
+              >
+                Edit
+              </div>
+            </div>
+            <div
+              class="item_subdetails"
+              style="top: 200px"
+              id="addOn_items"
+            ></div>
+          </div>
+        </div>
+        <div id="price_details_box">
+          <div class="coffee">
+            Coffee:
+            <div id="coffee_price"></div>
+          </div>
+          <div class="shipping">
+            Shipping:
+            <div id="shipping_price"></div>
+          </div>
+          <div class="subtotal">
+            Subtotal:
+            <div id="subtotal_price"></div>
+          </div>
+          <button id="checkout_btn">Checkout</button>
+          <div class="add_to_cart">+ ADD TO BAG & CONTINUE SHOPPING</div>
         </div>
       </div>
     </section>
     <script defer src="script.js"></script>
   </body>
 </html>
+

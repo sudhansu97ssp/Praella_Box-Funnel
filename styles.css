@@ -1,5 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
+.section-container.active {
+  display: block;
+}
+
+.section-container {
+  display: none;
+}
+
+.highlight {
+  color: #9d1c30 !important; /* Replace with your desired highlight color */
+}
+
+.previous {
+  color: black !important; /* Replace with your desired previous screen color */
+}
+
+.future {
+  opacity: 0.3 !important; /* Replace with your desired future screen color */
+}
+
+#header{
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
 #wrapperContainer {
   position: relative;
   top: 80px;
@@ -12,6 +44,8 @@
   opacity: 1;
   border: 1px solid #d3d3d3;
 }
+
+
 .heading {
   margin-top: 0;
   font-family: Montserrat;
@@ -30,7 +64,7 @@
   margin: 10px;
 }
 
-.image1 {
+#image1 {
   top: 183px;
   left: 75px;
   width: 397px;
@@ -41,7 +75,7 @@
   cursor: pointer;
 }
 
-.image2 {
+#image2 {
   top: 183px;
   left: 522px;
   width: 397px;
@@ -53,7 +87,7 @@
   cursor: pointer;
 }
 
-.image3 {
+#image3 {
   top: 183px;
   left: 969px;
   width: 397px;
@@ -120,7 +154,22 @@
 
 /* Start of bag selection page stylesheet */
 
-#back {
+
+#bag_section {
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
+
+
+.back {
   position: relative;
   top: 60px;
   left: 98px;
@@ -143,7 +192,7 @@
   background: transparent;
 }
 
-#next {
+.next {
   position: relative !important;
   top: 30px;
   left: 88.54vw;
@@ -202,9 +251,31 @@
   opacity: 1;
 }
 
+.clicked {
+  border: 2px solid #9d1c30;
+}
+
+.bag_img:hover{
+  border: 2px solid #9d1c30;
+  transition: border 0.2s ease-out;
+}
+
 /* End of bag Selection Page stylesheet */
 
 /* Start of Roast Page stylesheet */
+
+#roast_pref {
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
 
 #product_container {
   position: relative;
@@ -318,6 +389,19 @@
 
 /* Start of Grind Screen Stylesheet */
 
+#grind_types {
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
+
 #grind_types_container {
   position: relative;
   top: 96px;
@@ -385,6 +469,20 @@
 /* End of Grind Screen Stylesheet */
 
 /* Start of Frequency Page stylesheet */
+
+#frequencyType {
+  position: relative;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+  height: 78.41vh;
+  text-align: center;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  overflow: hidden;
+  opacity: 1;
+  border: 1px solid #d3d3d3;
+}
+
 
 #frequencyHeading {
   position: relative;
@@ -567,7 +665,6 @@
   text-align: center;
   font: normal normal bold 11px/14px Montserrat;
   letter-spacing: 0.55px;
-  /* color: #9d1c30; */
   text-transform: uppercase;
   opacity: 1;
 }
@@ -861,6 +958,7 @@
 }
 
 /* End of Summary Screen Stylesheet */
+
 
 
 
