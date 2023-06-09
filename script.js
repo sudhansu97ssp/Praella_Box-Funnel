@@ -201,7 +201,7 @@ function updateSelectedCount() {
     productQuantity.textContent = `You have selected ${totalSelectedQuantity}/${totalQuantity}`; // Update the selected count text
   }
 
-  if (nextBtn && totalSelectedQuantity == maxTotalQuantity) {
+  if (nextBtn && totalSelectedQuantity == totalQuantity) {
     nextBtn.addEventListener("click", () => {
       window.location.href = "grind.html"; // Redirect to grind.html when the next button is clicked
     });
