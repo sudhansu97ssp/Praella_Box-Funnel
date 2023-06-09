@@ -220,6 +220,17 @@ updateSelectedCount();
 
 // Function to handle click on quantity element
 function handleClickQuantity(element) {
+
+  // Remove border from previously clicked div
+  const prevClickedDiv = document.querySelector(".clicked");
+  if (prevClickedDiv) {
+    prevClickedDiv.classList.remove("clicked");
+  }
+
+  divClicked = true;
+  // Add border to clicked div
+  element.classList.add("clicked");
+  
   const quantityElement = element.querySelector(".imgCardText"); // Get the quantity element
   const priceElement = element.querySelector(".price"); // Get the price element
   const bagQuantity = quantityElement.textContent; // Get the bag quantity
@@ -332,13 +343,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Event listener for grind types container
 const grindTypesContainer = document.getElementById("grind_types_container");
+var selectedItem = null; // Track the currently selected item
+
 grindTypesContainer?.addEventListener("click", function (event) {
   const clickedItem = event.target.closest(".grind_types_item");
-  let bagDetailsObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
-  
+  let bagDetailsObj = JSON.parse(
+    localStorage.getItem("checkoutCartItemDetails")
+  );
   if (clickedItem) {
-    const grindVariantCategory = clickedItem.querySelector(".grindVariantCategory").textContent;
-    const grindVariantItem = clickedItem.querySelector(".grindVariantItem").textContent;
+    const grindVariantCategory = clickedItem.querySelector(
+      ".grindVariantCategory"
+    ).textContent;
+    const grindVariantItem =
+      clickedItem.querySelector(".grindVariantItem").textContent;
+
+    // Remove border from previously clicked item
+    if (selectedItem) {
+      selectedItem.style.border = "";
+    }
+
+    // Add border to currently clicked item
+    clickedItem.style.border = "2px solid #9d1c30";
+
+    // Update the selected item
+    selectedItem = clickedItem;
 
     // Update checkout cart item details
     checkoutCartItemDetails = {
@@ -360,16 +388,22 @@ grindTypesContainer?.addEventListener("click", function (event) {
       nextBtn.style.opacity = 0.3;
     }
 
-    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
+    localStorage.setItem(
+      "checkoutCartItemDetails",
+      JSON.stringify(checkoutCartItemDetails)
+    );
   }
 });
 
 // Event listener for frequency container
 const frequencyContainer = document.getElementById("frequency_container");
+
+var selectedDiv = null;
 frequencyContainer?.addEventListener("click", function (event) {
   const clickedItem = event.target.closest(".frequency_card");
-  let grindDataObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
-  
+  let grindDataObj = JSON.parse(
+    localStorage.getItem("checkoutCartItemDetails")
+  );
   if (clickedItem) {
     const frequency = clickedItem.getAttribute("data-frequency");
 
@@ -379,8 +413,8 @@ frequencyContainer?.addEventListener("click", function (event) {
       frequency,
     };
 
-    // Update next button and store updated item details in local storage
-    if (nextBtn && frequency) {
+     // Update next button and store updated item details in local storage
+     if (nextBtn && frequency) {
       nextBtn.addEventListener("click", () => {
         window.location.href = "add.html";
       });
@@ -390,18 +424,31 @@ frequencyContainer?.addEventListener("click", function (event) {
       nextBtn.style.opacity = 0.3;
     }
 
-    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
+    clickedItem.style.border = "2px solid #9d1c30";
+    selectedDiv = clickedItem; // Store reference to the currently selected div
+
+    if (frequency) {
+      divClicked = true;
+    }
+
+    localStorage.setItem(
+      "checkoutCartItemDetails",
+      JSON.stringify(checkoutCartItemDetails)
+    );
   }
 });
 
 // Event listener for add-on item container
+
 const addOnItemContainer = document.getElementById("addOn_item_container");
-let selectedButton = null;
+var selectedButton = null;
 addOnItemContainer?.addEventListener("click", function (event) {
   if (event.target.classList.contains("addOn_select_button")) {
     const clickedButton = event.target;
-    let freqDataObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
-    
+
+    let freqDataObj = JSON.parse(
+      localStorage.getItem("checkoutCartItemDetails")
+    );
     if (selectedButton) {
       selectedButton.textContent = "Select";
     }
@@ -409,7 +456,8 @@ addOnItemContainer?.addEventListener("click", function (event) {
     selectedButton = clickedButton;
     selectedButton.textContent = "Selected";
 
-    const addOnItemName = event.target.parentNode.querySelector(".addOn_item_name").textContent;
+    const addOnItemName =
+      event.target.parentNode.querySelector(".addOn_item_name").textContent;
 
     // Update checkout cart item details
     checkoutCartItemDetails = {
@@ -428,9 +476,13 @@ addOnItemContainer?.addEventListener("click", function (event) {
       nextBtn.style.opacity = 0.3;
     }
 
-    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
+    localStorage.setItem(
+      "checkoutCartItemDetails",
+      JSON.stringify(checkoutCartItemDetails)
+    );
   }
 });
+
 
 // Retrieving elements from the DOM
 const bagCount = document.getElementById("bag_count");
@@ -498,8 +550,6 @@ if (coffee_price) {
     coffee_price.appendChild(discountPriceEle);
   }
 }
-
-
 
 // This block of code is used to determine and display the shipping price or discount based on the maximum total quantity in the shopping cart.
 

@@ -202,6 +202,10 @@
   opacity: 1;
 }
 
+.clicked {
+  border: 2px solid #9d1c30;
+}
+
 /* End of bag Selection Page stylesheet */
 
 /* Start of Roast Page stylesheet */
