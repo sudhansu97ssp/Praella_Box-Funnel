@@ -1,5 +1,3 @@
-var divClicked = false;
-
 function handleClick(element) {
   // Get the <img> element within the clicked element
   const imgElement = element.querySelector("img");
@@ -26,7 +24,11 @@ function handleClick(element) {
     "preferenceType",
     JSON.stringify({ imageSrc, divText, spanText, preferenceSubText })
   );
+
+  // Redirect the user to "bag.html"
+  window.location.href = "bag.html";
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Event listener for when the DOM content is loaded
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 const imageUrl = "./assets/coffee_bean_spill.png"; // URL for the image used for all cards except the first one
 const Image1 = "./assets/coffee_bean_pot.png"; // URL for the image used for the first card
 const numOfCards = 12; // Number of image cards to create
@@ -62,6 +65,7 @@ const productQuantities = Array(numOfCards).fill(0); // Array to store product q
 
 const imageCardsContainer = document.getElementById("product_container"); // Get the container element for the image cards
 const productQuantity = document.querySelector(".product_quantity"); // Get the element for displaying the product quantity
+const nextBtn = document.getElementById("next"); // Get the next button element
 
 let checkoutCartItemDetails = {}; // Object to store checkout cart item details
 
@@ -84,26 +88,26 @@ for (let i = 0; i < numOfCards; i++) {
   nameElement.className = "productDetails"; // Set the class name for the product name div
   const productName1 = "Van Houtte";
   const productName2 = "Lavazza Coffee";
-  if (i === 0) {
+  if(i===0){
     nameElement.textContent = "Lavazza Coffee"; // Set the text content for the product name
-  } else {
+  }else{
     nameElement.textContent = "Van Houtte";
   }
 
   const subNameElement = document.createElement("div"); // Create a div element for the product sub details
   subNameElement.className = "productSubDetails"; // Set the class name for the product sub details div
-  if (i === 0) {
+  if(i===0){
     subNameElement.textContent = "EXOTIC • RICH • AROMATIC"; // Set the text content for the product sub details
-  } else {
+  }else{
     subNameElement.textContent = "classic • nutty • round body"; // Set the text content for the product sub details
   }
-
+  
   const counter = document.createElement("div"); // Create a div element for the quantity counter
   counter.className = "counter"; // Set the class name for the counter div
 
   const decreaseBtn = document.createElement("button"); // Create a button element for decreasing quantity
-  decreaseBtn.className = "decrease_btn";
-
+  decreaseBtn.className="decrease_btn";
+  
   decreaseBtn.textContent = "-"; // Set the text content for the decrease button
   decreaseBtn.addEventListener("click", () => decreaseQuantity(i)); // Add event listener for clicking on the decrease button
 
@@ -112,7 +116,7 @@ for (let i = 0; i < numOfCards; i++) {
   quantityElement.textContent = productQuantities[i]; // Set the initial quantity text
 
   const increaseBtn = document.createElement("button"); // Create a button element for increasing quantity
-  increaseBtn.className = "increase_btn";
+  increaseBtn.className="increase_btn";
   increaseBtn.textContent = "+"; // Set the text content for the increase button
   increaseBtn.addEventListener("click", () => increaseQuantity(i)); // Add event listener for clicking on the increase button
 
@@ -197,10 +201,16 @@ function updateSelectedCount() {
     productQuantity.textContent = `You have selected ${totalSelectedQuantity}/${totalQuantity}`; // Update the selected count text
   }
 
-  if (totalSelectedQuantity == maxTotalQuantity) {
-    divClicked = true;
+  if (nextBtn && totalSelectedQuantity == maxTotalQuantity) {
+    nextBtn.addEventListener("click", () => {
+      window.location.href = "grind.html"; // Redirect to grind.html when the next button is clicked
+    });
+    nextBtn.style.opacity = 1; // Make the next button fully visible
   } else {
-    divClicked = false;
+    if (nextBtn) {
+      nextBtn.removeEventListener("click", () => {});
+      nextBtn.style.opacity = 0.3; // Make the next button partially transparent
+    }
   }
 }
 
@@ -210,16 +220,6 @@ updateSelectedCount();
 
 // Function to handle click on quantity element
 function handleClickQuantity(element) {
-  // Remove border from previously clicked div
-  const prevClickedDiv = document.querySelector(".clicked");
-  if (prevClickedDiv) {
-    prevClickedDiv.classList.remove("clicked");
-  }
-
-  divClicked = true;
-  // Add border to clicked div
-  element.classList.add("clicked");
-
   const quantityElement = element.querySelector(".imgCardText"); // Get the quantity element
   const priceElement = element.querySelector(".price"); // Get the price element
   const bagQuantity = quantityElement.textContent; // Get the bag quantity
@@ -228,6 +228,16 @@ function handleClickQuantity(element) {
 
   const regularPrice = priceSpans[0].textContent; // Get the regular price
   const shippingPrice = priceSpans[1].textContent; // Get the shipping price
+
+  if (nextBtn && bagQuantity) {
+    nextBtn.addEventListener("click", () => {
+      window.location.href = "roast.html"; // Redirect to roast.html when the next button is clicked
+    });
+    nextBtn.style.opacity = 1; // Make the next button fully visible
+  } else {
+    nextBtn.removeEventListener("click", () => {});
+    nextBtn.style.opacity = 0.3; // Make the next button partially transparent
+  }
 
   let selectedQuantity = parseInt(bagQuantity, 10); // Parse the bag quantity as an integer
   checkoutCartItemDetails["bagDetails"] = {
@@ -255,32 +265,80 @@ function updateCartItemDetails(index, quantity) {
 }
 
 
+// Function to highlight the navigation based on the current URL
+function highlightNavigation() {
+  // Get the current URL and extract the HTML file name
+  var currentURL = window.location.href;
+
+  var fileName = currentURL.substring(
+    currentURL.lastIndexOf("/") + 1,
+    currentURL.lastIndexOf(".")
+  );
+
+  // Get the navigation container element
+  var navigationContainer = document.querySelector(".navigation_container");
+
+  // Get all the screen elements within the navigation container
+  var screenElements = navigationContainer.querySelectorAll(".screen");
+
+  // Loop through each screen element and apply the appropriate styles
+  for (var i = 0; i < screenElements.length; i++) {
+    var screenElement = screenElements[i];
+
+    var screenText = screenElement.textContent.trim().toLowerCase();
+
+    if (screenText.includes(fileName) || screenText === fileName) {
+      // Match found
+      screenElement.style.fontWeight = "bold";
+      screenElement.style.color = "#9D1C30";
+
+      // Array of previous screen elements
+      var prevScreenElements = [];
+      if (i > 0) {
+        for (var j = i - 1; j >= 0; j--) {
+          prevScreenElements.push(screenElements[j]);
+        }
+      }
+
+      // Array of next screen elements
+      var nextScreenElements = [];
+      if (i < screenElements.length - 1) {
+        for (var k = i + 1; k < screenElements.length; k++) {
+          nextScreenElements.push(screenElements[k]);
+        }
+      }
+
+      // Apply styles to previous screen elements
+      for (var p = 0; p < prevScreenElements.length; p++) {
+        var prevScreenElement = prevScreenElements[p];
+        prevScreenElement.style.fontWeight = "bold";
+        prevScreenElement.style.color = "black";
+      }
+
+      // Apply styles to next screen elements
+      for (var n = 0; n < nextScreenElements.length; n++) {
+        var nextScreenElement = nextScreenElements[n];
+        nextScreenElement.style.fontWeight = "bold";
+        nextScreenElement.style.opacity = "0.3";
+      }
+    }
+  }
+}
+
+// Highlight navigation on page load
+document.addEventListener("DOMContentLoaded", function () {
+  highlightNavigation();
+});
+
 // Event listener for grind types container
 const grindTypesContainer = document.getElementById("grind_types_container");
-var selectedItem = null; // Track the currently selected item
-
 grindTypesContainer?.addEventListener("click", function (event) {
   const clickedItem = event.target.closest(".grind_types_item");
-  let bagDetailsObj = JSON.parse(
-    localStorage.getItem("checkoutCartItemDetails")
-  );
+  let bagDetailsObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
+  
   if (clickedItem) {
-    const grindVariantCategory = clickedItem.querySelector(
-      ".grindVariantCategory"
-    ).textContent;
-    const grindVariantItem =
-      clickedItem.querySelector(".grindVariantItem").textContent;
-
-    // Remove border from previously clicked item
-    if (selectedItem) {
-      selectedItem.style.border = "";
-    }
-
-    // Add border to currently clicked item
-    clickedItem.style.border = "2px solid #9d1c30";
-
-    // Update the selected item
-    selectedItem = clickedItem;
+    const grindVariantCategory = clickedItem.querySelector(".grindVariantCategory").textContent;
+    const grindVariantItem = clickedItem.querySelector(".grindVariantItem").textContent;
 
     // Update checkout cart item details
     checkoutCartItemDetails = {
@@ -291,26 +349,27 @@ grindTypesContainer?.addEventListener("click", function (event) {
       },
     };
 
-    if (grindVariantCategory) {
-      divClicked = true;
+    // Update next button and store updated item details in local storage
+    if (nextBtn && grindVariantCategory) {
+      nextBtn.addEventListener("click", () => {
+        window.location.href = "frequency.html";
+      });
+      nextBtn.style.opacity = 1;
+    } else {
+      nextBtn.removeEventListener("click", () => {});
+      nextBtn.style.opacity = 0.3;
     }
 
-    localStorage.setItem(
-      "checkoutCartItemDetails",
-      JSON.stringify(checkoutCartItemDetails)
-    );
+    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
   }
 });
 
 // Event listener for frequency container
 const frequencyContainer = document.getElementById("frequency_container");
-
-var selectedDiv = null;
 frequencyContainer?.addEventListener("click", function (event) {
   const clickedItem = event.target.closest(".frequency_card");
-  let grindDataObj = JSON.parse(
-    localStorage.getItem("checkoutCartItemDetails")
-  );
+  let grindDataObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
+  
   if (clickedItem) {
     const frequency = clickedItem.getAttribute("data-frequency");
 
@@ -320,35 +379,29 @@ frequencyContainer?.addEventListener("click", function (event) {
       frequency,
     };
 
-    if (selectedDiv) {
-      selectedDiv.style.border = ""; // Remove border from previously selected div
+    // Update next button and store updated item details in local storage
+    if (nextBtn && frequency) {
+      nextBtn.addEventListener("click", () => {
+        window.location.href = "add.html";
+      });
+      nextBtn.style.opacity = 1;
+    } else {
+      nextBtn.removeEventListener("click", () => {});
+      nextBtn.style.opacity = 0.3;
     }
 
-    clickedItem.style.border = "2px solid #9d1c30";
-    selectedDiv = clickedItem; // Store reference to the currently selected div
-
-    if (frequency) {
-      divClicked = true;
-    }
-
-    localStorage.setItem(
-      "checkoutCartItemDetails",
-      JSON.stringify(checkoutCartItemDetails)
-    );
+    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
   }
 });
 
 // Event listener for add-on item container
-
 const addOnItemContainer = document.getElementById("addOn_item_container");
-var selectedButton = null;
+let selectedButton = null;
 addOnItemContainer?.addEventListener("click", function (event) {
   if (event.target.classList.contains("addOn_select_button")) {
     const clickedButton = event.target;
-
-    let freqDataObj = JSON.parse(
-      localStorage.getItem("checkoutCartItemDetails")
-    );
+    let freqDataObj = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
+    
     if (selectedButton) {
       selectedButton.textContent = "Select";
     }
@@ -356,8 +409,7 @@ addOnItemContainer?.addEventListener("click", function (event) {
     selectedButton = clickedButton;
     selectedButton.textContent = "Selected";
 
-    const addOnItemName =
-      event.target.parentNode.querySelector(".addOn_item_name").textContent;
+    const addOnItemName = event.target.parentNode.querySelector(".addOn_item_name").textContent;
 
     // Update checkout cart item details
     checkoutCartItemDetails = {
@@ -365,19 +417,22 @@ addOnItemContainer?.addEventListener("click", function (event) {
       addOnItemName,
     };
 
-    if (addOnItemName) {
-      divClicked = true;
+    // Update next button and store updated item details in local storage
+    if (nextBtn && addOnItemName) {
+      nextBtn.addEventListener("click", () => {
+        window.location.href = "summary.html";
+      });
+      nextBtn.style.opacity = 1;
+    } else {
+      nextBtn.removeEventListener("click", () => {});
+      nextBtn.style.opacity = 0.3;
     }
 
-    localStorage.setItem(
-      "checkoutCartItemDetails",
-      JSON.stringify(checkoutCartItemDetails)
-    );
+    localStorage.setItem("checkoutCartItemDetails", JSON.stringify(checkoutCartItemDetails));
   }
 });
 
 // Retrieving elements from the DOM
-
 const bagCount = document.getElementById("bag_count");
 const grind_type = document.getElementById("grind_type");
 const frequencyDetails = document.getElementById("frequency_type");
@@ -385,14 +440,12 @@ const addOn_items = document.getElementById("addOn_items");
 const productSubText = document.getElementById("cartImg_subHeading");
 const coffee_price = document.getElementById("coffee_price");
 const shipping_price = document.getElementById("shipping_price");
-const subtotal = document.getElementById("subtotal_price");
+const subtotal = document.getElementById("subtotal_price")
 
 // Retrieving cart details from local storage
-const cartAllDetails = JSON.parse(
-  localStorage.getItem("checkoutCartItemDetails")
-);
-console.log(cartAllDetails);
+const cartAllDetails = JSON.parse(localStorage.getItem("checkoutCartItemDetails"));
 const preferenceDetails = JSON.parse(localStorage.getItem("preferenceType"));
+
 
 if (productSubText) {
   const spanElement = document.createElement("span");
@@ -433,8 +486,8 @@ if (coffee_price) {
   } else if (maxTotalQuantity == 8 || maxTotalQuantity == 12) {
     // If maxTotalQuantity is 8 or 12, create and append elements for regularPriceEle and discountPriceEle
     const regularPriceEle = document.createElement("span");
-    regularPriceEle.style.color = "#9d1c30";
-    regularPriceEle.style.fontSize = "12px";
+    regularPriceEle.style.color= "#9d1c30";
+    regularPriceEle.style.fontSize= "12px";
     regularPriceEle.innerHTML = `<s>${cartAllDetails?.bagDetails?.regularPrice}</s>`;
 
     const discountPriceEle = document.createElement("span");
@@ -446,10 +499,11 @@ if (coffee_price) {
   }
 }
 
+
+
 // This block of code is used to determine and display the shipping price or discount based on the maximum total quantity in the shopping cart.
 
-if (shipping_price) {
-  // Check if the element with id "shipping_price" exists
+if (shipping_price) { // Check if the element with id "shipping_price" exists
   if (maxTotalQuantity == 4) {
     // If the maximum total quantity is 4, display the shipping price from the cart's bag details
     shipping_price.textContent = cartAllDetails?.bagDetails?.shippingPrice;
@@ -461,153 +515,71 @@ if (shipping_price) {
   }
 }
 
+
 // Regular expression function to extract the number from the alphanumeric string
 
 function findNumber(string) {
-  var pattern = /\d+/; // Regular expression pattern to match one or more digits
-  var match = string.match(pattern); // Search for the pattern in the string
+  var pattern = /\d+/;  // Regular expression pattern to match one or more digits
+  var match = string.match(pattern);  // Search for the pattern in the string
 
   if (match) {
-    var number = parseInt(match[0], 10); // Extract the matched number and convert it to an integer
+    var number = parseInt(match[0], 10);  // Extract the matched number and convert it to an integer
     return number;
   } else {
-    return null; // Return null if no number is found
+    return null;  // Return null if no number is found
   }
 }
 
 // Function to add the subtotal value in html element
 if (subtotal) {
   // Check if the subtotal element exists
-
+  
   if (maxTotalQuantity == 4) {
     // If the maximum total quantity is 4
-
+    
     // Find the regular price and shipping price from the cart details
     const regularPrice = findNumber(cartAllDetails?.bagDetails?.regularPrice);
     const shippingPrice = findNumber(cartAllDetails?.bagDetails?.shippingPrice);
-
+    
     // Calculate the sum of the regular price and shipping price
     const sum = regularPrice + shippingPrice;
-
+    
     // Display the subtotal as '$' followed by the calculated sum with 2 decimal places
-    subtotal.textContent = "$" + sum.toFixed(2);
+    subtotal.textContent = '$' + sum.toFixed(2);
   } else if (maxTotalQuantity == 8 || maxTotalQuantity == 12) {
     // If the maximum total quantity is 8 or 12
-
+    
     // Display the subtotal as the shipping price from the cart details
     subtotal.textContent = cartAllDetails?.bagDetails?.shippingPrice;
   }
 }
 
 // Retrieving checkout_btn element from the DOM
-const checkout_btn = document.getElementById("checkout_btn");
+const checkout_btn=document.getElementById("checkout_btn");
 
-if (checkout_btn) {
-  checkout_btn.addEventListener("click", function () {
+if(checkout_btn){
+  checkout_btn.addEventListener('click', function() {
     // Clear local storage
     localStorage.clear();
-
+  
     // Show popup
-    var popup = document.createElement("div");
-    popup.className = "popup";
-    popup.innerHTML =
-      "<p>Product checkout complete! Please wait while we navigate you to the prefernce Selection Page !!!</p>";
-
+    var popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = '<p>Product checkout complete! Please wait while we navigate you to the prefernce Selection Page !!!</p>';
+  
     document.body.appendChild(popup);
-
+  
     // Remove popup after 2 seconds
-    setTimeout(function () {
-      popup.classList.add("hidden");
-      setTimeout(function () {
+    setTimeout(function() {
+      popup.classList.add('hidden');
+      setTimeout(function() {
         popup.remove();
       }, 500);
     }, 2000);
-
+  
     // Navigate to index.html after 2 seconds
-    setTimeout(function () {
-      window.location.href = "/";
+    setTimeout(function() {
+      window.location.href = 'index.html';
     }, 2000);
   });
 }
-
-let currentIndex = 0;
-let historyStack = [];
-
-document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll(".section-container");
-  const nextBtnDiv = document.querySelectorAll(".next");
-  const backBtnDiv = document.querySelectorAll(".back");
-  const clickableDiv = document.querySelectorAll(".image_style");
-  const header = document.getElementById("header");
-  const bag_section = document.getElementById("bag_section");
-  // Get the navigation container element
-  const navigationContainer = document.querySelector(".navigation_container");
-
-  // Get all the screen elements within the navigation container
-  const screenElements = navigationContainer.querySelectorAll(".screen");
-
-  divClicked = false;
-
-  // Show the initial section
-  clickableDiv.forEach(function (div, index) {
-    div.addEventListener("click", function () {
-      currentIndex = 0;
-      header.style.display = "none";
-      sections[currentIndex].classList.add("active");
-      if (currentIndex === 0) {
-        screenElements[currentIndex].classList.add("highlight");
-      } else {
-        screenElements[currentIndex].classList.remove("highlight");
-        screenElements[currentIndex].classList.add("black");
-      }
-    });
-  });
-
-  nextBtnDiv.forEach(function (div, index) {
-    div.addEventListener("click", function () {
-      if (divClicked) {
-        // Hide the current section
-        sections[currentIndex].classList.remove("active");
-
-        // Push the current index to the history stack
-        historyStack.push(currentIndex);
-
-        // Increment the index or reset to 0 if it exceeds the number of sections
-        currentIndex = (currentIndex + 1) % sections?.length;
-
-        screenElements[currentIndex].classList.add("highlight");
-        divClicked = false;
-        // Show the next section
-        sections[currentIndex].classList.add("active");
-      }
-    });
-  });
-
-  backBtnDiv.forEach(function (div, index) {
-    div.addEventListener("click", function () {
-      selectedItem, selectedDiv, (selectedButton = null);
-
-      // Hide the current section
-      sections[currentIndex].classList.remove("active");
-
-      // Pop the previous index from the history stack
-      if (historyStack.length > 0) {
-        currentIndex = historyStack.pop();
-      }
-
-      // Show the previous section
-      sections[currentIndex].classList.add("active");
-    });
-  });
-
-  if (bag_section) {
-    backBtnDiv[0].addEventListener("click", function () {
-      header.style.display = "block";
-      sections[0].classList.remove("active");
-    });
-  }
-});
-
-window.addEventListener('beforeunload', function() {
-  localStorage.clear();
-});
